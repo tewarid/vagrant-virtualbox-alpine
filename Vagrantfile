@@ -45,17 +45,16 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
+  # config.vm.synced_folder "~/", "/media/psf/Home"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb|
-    # Display the VirtualBox GUI when booting the machine
-    vb.gui = true
-
+  config.vm.provider "parallels" do |prl|
+    prl.name = "alpine"
+    prl.cpus = 2
     # Customize the amount of memory on the VM:
-    vb.memory = "2048"
+    prl.memory = "2048"
   end
   #
   # View the documentation for the provider you are using for more
@@ -76,11 +75,5 @@ Vagrant.configure("2") do |config|
     # Add users to group docker
     addgroup root docker
     addgroup vagrant docker
-    # Upgrade to latest vanilla kernal
-    apk upgrade linux-vanilla
-    # Install VirtualBox guest additions
-    apk add virtualbox-guest-additions virtualbox-guest-modules-virt
-    # Add user to vboxsf group
-    addgroup vagrant vboxsf
   SHELL
 end

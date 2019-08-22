@@ -7,7 +7,7 @@ Install VirtualBox and Vagrant for your platform.
 Clone this repo and run
 
 ```bash
-vagrant up
+vagrant up --provider=parallels
 ```
 
 Reboot the VM.
@@ -18,21 +18,6 @@ Log in using login vagrant (password vagrant) and run
 
 ```bash
 passwd root
-```
-
-## VirtualBox shared folders
-
-Create a permanent shared folder in VM settings called `home`, [login as root](#set-root-user-password), and run
-
-```bash
-modprobe -a vboxsf
-mount -t vboxsf home /mnt/home
-```
-
-You can also add the following to `/etc/fstab` so the folder is mounted automatically
-
-```fstab
-home            /mnt/home       vboxsf  defaults 0 0
 ```
 
 ## SSH from host
