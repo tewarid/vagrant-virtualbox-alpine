@@ -25,5 +25,20 @@ passwd root
 See VM network port forwarding settings to find which port on host is mapped to port 22 (default ssh port) on VM, then run
 
 ```bash
-ssh -p 2200 root@localhost
+ssh -p 22 root@localhost
+```
+
+## Mount shared folder using CIFS
+
+If you've enabled file sharing using SMB on macOS or Windows, you can mount the shared folder using cifs
+
+```bash
+apk add cifs-utils
+mount -t cifs //10.211.55.2/<shared folder> /mnt/<shared folder> -o uid=0,gid=0,user=<username>,password=<password>
+```
+
+You can also add an entry to `/etc/fstab` to automatically mount folder
+
+```fstab
+//10.211.55.2/<shared folder> /mnt/<shared folder> cifs auto,uid=0,gid=0,user=<username>,password=<password> 0 0
 ```
