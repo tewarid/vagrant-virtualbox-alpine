@@ -2,7 +2,7 @@
 
 ## Instructions
 
-Install VirtualBox and Vagrant for your platform.
+Install Parallels, Vagrant, and [Vagrant Parallels Provider](https://github.com/Parallels/vagrant-parallels) for macOS.
 
 Clone this repo and run
 
