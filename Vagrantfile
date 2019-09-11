@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apk update
     # Install Docker
-    apk add docker
+    apk add libseccomp docker
     rc-update add docker boot
     service docker start
     # Install Docker Compose
