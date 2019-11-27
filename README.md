@@ -2,7 +2,7 @@
 
 ## Instructions
 
-Install VirtualBox and Vagrant for your platform.
+Install VirtualBox and Vagrant for your platform. Check out the parallels branch if you use Parallels Desktop Pro on macOS.
 
 Clone this repo and run
 
