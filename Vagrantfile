@@ -76,7 +76,7 @@ Vagrant.configure("2") do |config|
     # Add users to group docker
     addgroup root docker
     addgroup vagrant docker
-    # Upgrade to latest vanilla kernal
+    # Upgrade to latest vanilla kernel
     apk upgrade linux-vanilla
     # Install VirtualBox guest additions
     apk add virtualbox-guest-additions virtualbox-guest-modules-virt
